@@ -6,7 +6,9 @@ namespace Palindrome
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Enter a word, phrase, or sentence.");
+            var input = Console.ReadLine();
+            var palindromeChecker = new PalindromeChecker(input);
         }
     }
 }
