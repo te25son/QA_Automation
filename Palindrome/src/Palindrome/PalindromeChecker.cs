@@ -14,8 +14,9 @@ namespace Palindrome
 
         public string InputString { get; set; }
 
-        public string WithoutWhitespaceOrPunctuation { 
-            get { return RemoveWhitespaceFromString(InputString); } 
+        public string WithoutWhitespaceAndPunctuation
+        { 
+            get { return RemoveWhitespaceAndPunctuationFromString(InputString); } 
         }
 
         public string Reversed { 
@@ -25,14 +26,14 @@ namespace Palindrome
         public bool IsPalindrome {
             get
             {
-                var onlyLowerCaseChars = WithoutWhitespaceOrPunctuation.ToLower();
+                var onlyLowerCaseChars = WithoutWhitespaceAndPunctuation.ToLower();
                 var onlyLowerCaseCharsReversed = ReverseString(onlyLowerCaseChars);
 
                 return onlyLowerCaseChars.Equals(onlyLowerCaseCharsReversed);
             } 
         }
 
-        private string RemoveWhitespaceFromString(string value)
+        private string RemoveWhitespaceAndPunctuationFromString(string value)
         {
             var asCharArray = value.ToCharArray();
             
