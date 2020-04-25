@@ -25,10 +25,10 @@ namespace Palindrome
         public bool IsPalindrome {
             get
             {
-                var onlyChars = WithoutWhitespaceOrPunctuation.ToLower();
-                var onlyCharsReversed = ReverseString(onlyChars);
+                var onlyLowerCaseChars = WithoutWhitespaceOrPunctuation.ToLower();
+                var onlyLowerCaseCharsReversed = ReverseString(onlyLowerCaseChars);
 
-                return onlyChars.Equals(onlyCharsReversed);
+                return onlyLowerCaseChars.Equals(onlyLowerCaseCharsReversed);
             } 
         }
 
