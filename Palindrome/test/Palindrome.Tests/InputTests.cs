@@ -12,7 +12,7 @@ namespace Palindrome.Tests
         {
             var palindrome = new PalindromeChecker(input);
 
-            Assert.Equal(expected, palindrome.WithoutWhitespaceAndPunctuation);
+            Assert.Equal(expected, palindrome._withoutWhitespace);
         }
 
         [Theory]
@@ -23,7 +23,7 @@ namespace Palindrome.Tests
         {
             var palindrome = new PalindromeChecker(input);
 
-            Assert.Equal(expected, palindrome.WithoutWhitespaceAndPunctuation);
+            Assert.Equal(expected, palindrome._withoutPunctuation);
         }
 
         [Theory]
@@ -34,7 +34,7 @@ namespace Palindrome.Tests
         {
             var palindrome = new PalindromeChecker(input);
 
-            Assert.Equal(expected, palindrome.Reversed);
+            Assert.Equal(expected, palindrome._reversed);
         }
 
         [Theory]

@@ -5,49 +5,47 @@ using System.Text;
 
 namespace Palindrome
 {
-    public class PalindromeChecker
+    public class PalindromeChecker : StringChecker
     {
-        public PalindromeChecker(string input)
+        public PalindromeChecker(string input) 
+            : base(input)
         {
-            InputString = input;
+            _inputValue = input.ToLower();
         }
 
-        public string InputString { get; set; }
+        public string _inputValue { get; set; }
 
-        public string WithoutWhitespaceAndPunctuation
+        public string _withoutWhitespace 
+        {  
+            get { return RemoveWhitespace(); }
+            set { _inputValue = value; }
+        }
+
+        public string _withoutPunctuation 
         { 
-            get { return RemoveWhitespaceAndPunctuationFromString(InputString); } 
+            get { return RemovePunctuation(); }
+            set { _inputValue = value; }
+        }
+        
+        public string _reversed 
+        { 
+            get { return ReverseString(); }
+            set { _inputValue = value; }
         }
 
-        public string Reversed { 
-            get { return ReverseString(InputString); } 
-        }
-
-        public bool IsPalindrome {
+        public bool IsPalindrome 
+        {
             get
             {
-                var onlyLowerCaseChars = WithoutWhitespaceAndPunctuation.ToLower();
-                var onlyLowerCaseCharsReversed = ReverseString(onlyLowerCaseChars);
+                _inputValue = _withoutPunctuation;
+                _inputValue = _withoutWhitespace;
 
-                return onlyLowerCaseChars.Equals(onlyLowerCaseCharsReversed);
+                var copy = _inputValue;
+
+                _inputValue = _reversed;
+
+                return copy.Equals(_inputValue);
             } 
-        }
-
-        private string RemoveWhitespaceAndPunctuationFromString(string value)
-        {
-            var asCharArray = value.ToCharArray();
-            
-            return new string(
-                asCharArray.Where(c => !Char.IsWhiteSpace(c) && !Char.IsPunctuation(c)).ToArray()
-            );
-        }
-
-        private string ReverseString(string value)
-        {
-            var asCharArray = value.ToCharArray();
-            Array.Reverse(asCharArray);
-
-            return new string(asCharArray);
         }
     }
 }
