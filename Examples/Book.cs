@@ -3,20 +3,27 @@ using System.Collections.Generic;
 
 namespace examples
 {
-    public class Book
+    public class Book<T>
     {
-        public List<Student> StudentList { get; set; }
+        public List<T> ItemList { get; set; }
 
-        public void Add(Student student)
+        public void Add(T student)
         {
-            StudentList.Add(student);
+            ItemList.Add(student);
         }
 
         public void Dump()
         {
-            foreach (var student in StudentList)
+            foreach (var item in ItemList)
             {
-                Console.WriteLine(student.Name);
+                if (item.GetType().Equals(typeof(Student)))
+                {
+                    Console.WriteLine($"I am a student.");
+                }
+                else
+                {
+                    Console.WriteLine("I am an employee");
+                }
             }
         }
     }
