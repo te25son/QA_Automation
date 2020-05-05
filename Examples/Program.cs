@@ -2,7 +2,6 @@
 
 namespace examples
 {
-    public delegate void EnrollStudent(Student student);
     class Program
     {
         static void Enroll(out Student student)
