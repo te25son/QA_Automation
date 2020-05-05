@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace examples
 {
@@ -12,16 +13,13 @@ namespace examples
 
         static void Main(string[] args)
         {
-            Student student;
-            Enroll(out student);
-
-            Console.WriteLine(student.Enrolled);
+            var book = new Book();
+            book.StudentList = new List<Student>
+            {
+                new Student { Name = "Frodo" },
+                new Student { Name = "Bilbo" }
+            };
+            book.Dump();
         }
-    }
-
-    public class Student
-    {
-        public string Name { get; set; }
-        public bool Enrolled { get; set; }
     }
 }

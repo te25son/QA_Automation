@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace examples
 {
-    public class Book<Student>
+    public class Book
     {
         public List<Student> StudentList { get; set; }
 
@@ -12,9 +12,9 @@ namespace examples
             StudentList.Add(student);
         }
 
-        public void Dump(List<Student> studentList)
+        public void Dump()
         {
-            foreach (var student in studentList)
+            foreach (var student in StudentList)
             {
                 Console.WriteLine(student.Name);
             }
