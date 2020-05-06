@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace examples
 {
-    public delegate void Printer(string value);
+    public delegate void Printer(object value);
+
+    public interface INamedEntity
+    {
+        string Name { get; set; }
+    }
 
     public class Book<T>
-        where T : INamedEntity
+        where T : INamedEntity // Type constraint.
     {
         public Book()
         {
