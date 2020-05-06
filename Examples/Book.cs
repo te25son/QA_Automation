@@ -1,11 +1,18 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace examples
 {
     public class Book<T>
+        where T : INamedEntity
     {
-        public List<T> ItemList { get; set; };
+        public Book()
+        {
+            ItemList = new List<T>();
+        }
+
+        public List<T> ItemList { get; set; }
 
         public void Add(T item)
         {
@@ -14,7 +21,7 @@ namespace examples
 
         public void Dump()
         {
-            foreach(var item in ItemList)
+            foreach (var item in ItemList)
             {
                 Console.WriteLine(item.Name);
             }

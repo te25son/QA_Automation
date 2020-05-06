@@ -4,10 +4,10 @@ using System.Text;
 
 namespace examples
 {
-    public class Student : INamedEntity
+    public class Employee : INamedEntity
     {
         public string Name { get; set; }
 
-        public bool Enrolled { get; set; }
+        public int Id { get; set; }
     }
 }

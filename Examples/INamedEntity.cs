@@ -4,10 +4,8 @@ using System.Text;
 
 namespace examples
 {
-    public class Student : INamedEntity
+    public interface INamedEntity
     {
         public string Name { get; set; }
-
-        public bool Enrolled { get; set; }
     }
 }
