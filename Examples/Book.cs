@@ -5,25 +5,18 @@ namespace examples
 {
     public class Book<T>
     {
-        public List<T> ItemList { get; set; }
+        public List<T> ItemList { get; set; };
 
-        public void Add(T student)
+        public void Add(T item)
         {
-            ItemList.Add(student);
+            ItemList.Add(item);
         }
 
         public void Dump()
         {
-            foreach (var item in ItemList)
+            foreach(var item in ItemList)
             {
-                if (item.GetType().Equals(typeof(Student)))
-                {
-                    Console.WriteLine($"I am a student.");
-                }
-                else
-                {
-                    Console.WriteLine("I am an employee");
-                }
+                Console.WriteLine(item.Name);
             }
         }
     }
