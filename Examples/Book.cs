@@ -4,6 +4,8 @@ using System.Text;
 
 namespace examples
 {
+    public delegate void Printer(string value);
+
     public class Book<T>
         where T : INamedEntity
     {
@@ -19,11 +21,11 @@ namespace examples
             ItemList.Add(item);
         }
 
-        public void Dump()
+        public void Dump(Printer print)
         {
             foreach (var item in ItemList)
             {
-                Console.WriteLine(item.Name);
+                print(item.Name);
             }
         }
     }
