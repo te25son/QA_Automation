@@ -12,10 +12,9 @@ namespace Lessons.Lesson03
             IEnumerable<string> cities = new[] { "Prague", "New York", "Rome", "Hong Kong", "Paris" };
             IEnumerable<string> query = cities.StringsThatStartWith("P");
 
-            foreach (var item in query)
-            {
-                WriteLine(item);
-            }
+            var numbers = new[] { 1, 2, 3 };
+            query.WriteEach();
+            numbers.WriteEach();
         }
     }
 
@@ -23,12 +22,20 @@ namespace Lessons.Lesson03
     {
         public static IEnumerable<string> StringsThatStartWith(this IEnumerable<string> source, string start)
         {
-            foreach (var s in source)
+            foreach (var enumerable in source)
             {
-                if (s.StartsWith(start))
+                if (enumerable.StartsWith(start))
                 {
-                    yield return s;
+                    yield return enumerable;
                 }
+            }
+        }
+
+        public static void WriteEach<T>(this IEnumerable<T> source)
+        {
+            foreach (var enumerable in source)
+            {
+                WriteLine(enumerable);
             }
         }
     }

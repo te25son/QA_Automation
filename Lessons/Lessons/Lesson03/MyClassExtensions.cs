@@ -15,5 +15,10 @@ namespace Lessons.Lesson03
         {
             WriteLine(text);
         }
+
+        public static bool StringStartsWithL(this string startingString)
+        {
+            return startingString.StartsWith("L");
+        }
     }
 }
