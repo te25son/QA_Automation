@@ -13,11 +13,13 @@ namespace Lessons
                     ["Fields"] = Lesson02.FieldExamples.Run,
                     ["Properties"] = Lesson02.PropertyExamples.Run,
                     ["ExtensionMethods"] = Lesson03.ExtensionMethodExamples.Run,
-                    ["Cities"] = Lesson03.Cities.Run
+                    ["Cities"] = Lesson03.Cities.Run,
+                    ["LambdaExpressionsBefore"] = Lesson04.LambdaExpressionsBefore.Run,
+                    ["LambdaExpressionsAfter"] = Lesson04.LambdaExpressionsAfter.Run
                 };
 
             foreach (var example in examples)
-                if (example.Key.Equals("Cities"))
+                if (example.Key.Equals("LambdaExpressionsBefore"))
                     example.Value();
         }
     }
