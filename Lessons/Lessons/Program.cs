@@ -15,11 +15,12 @@ namespace Lessons
                     ["ExtensionMethods"] = Lesson03.ExtensionMethodExamples.Run,
                     ["Cities"] = Lesson03.Cities.Run,
                     ["LambdaExpressionsBefore"] = Lesson04.LambdaExpressionsBefore.Run,
-                    ["LambdaExpressionsAfter"] = Lesson04.LambdaExpressionsAfter.Run
+                    ["LambdaExpressionsAfter"] = Lesson04.LambdaExpressionsAfter.Run,
+                    ["BasicDelegates"] = Lesson04.BasicDelegates.Run
                 };
 
             foreach (var example in examples)
-                if (example.Key.Equals("LambdaExpressionsBefore"))
+                if (example.Key.Equals("BasicDelegates"))
                     example.Value();
         }
     }

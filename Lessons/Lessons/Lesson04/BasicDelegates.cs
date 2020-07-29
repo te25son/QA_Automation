@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lessons.Lesson04
 {
@@ -8,17 +6,25 @@ namespace Lessons.Lesson04
 
     public class BasicDelegates
     {
-        public void Run()
+        public static void Run()
         {
             Func<int, int> square = x => x * x;
-            Func<int, int, int> add = (x, y) => x + y;  // Paranthesis needed for more than one parameter.
+            Func<int, int, int> add = (x, y) =>
+            {
+                var temp = x + y;
+                return temp;
+            };
 
             WriteLine(square(2));
-            WriteLine(add(3, 3));
 
-            Action<int> write = x => WriteLine(x);
+            Action<int> print = x => WriteLine(x);
 
-            write(square(add(3, 3)));
+            print(square(add(2, 2)));
+
+            Predicate<int> isTen = x => x == 10;
+
+            WriteLine(value: isTen(5));
+            WriteLine(value: isTen(10));
         }
     }
 }

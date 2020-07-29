@@ -18,7 +18,7 @@ namespace Lessons.Lesson04
                 new Person("Gimly")
             };
 
-            foreach (var person in people.Where(NameStartsWithG))
+            foreach (var person in people.Where(p => p.Name.StartsWith("G")))
             {
                 WriteLine(person.Name);
             }
